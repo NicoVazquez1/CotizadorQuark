@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CotizadorQuark.Repositorios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,15 +11,15 @@ namespace CotizadorQuark.Modelos
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public string Id { get; set; }
+        public static int Id { get; set; }
         public List<Cotizacion> Cotizaciones;
-        public Tienda Tienda { get; set; }
         public Vendedor(string nombre, string apellido)
         {
             Nombre = nombre;
             Apellido = apellido;
-            Id = Guid.NewGuid().ToString();
+            Id = 001001;
             Cotizaciones = new List<Cotizacion>();
+            Id++;
         }
         public List<Cotizacion> agregarCotizacion(List<Cotizacion> cotizaciones)
         {

@@ -1,3 +1,5 @@
+using CotizadorQuark.Controladores;
+
 namespace CotizadorQuark
 {
     public partial class Form1 : Form
@@ -39,10 +41,8 @@ namespace CotizadorQuark
 
         private void buttonCotizar_Click(object sender, EventArgs e)
         {
-            string info;
-            Controladores.Controller cotizador = new Controladores.Controller();
-            info = cotizador.Cotizar(this);
-            MessageBox.Show(info);
+            Controller cotizador = new Controller();
+            cotizador.Cotizar(this);
         }
 
         private void textBoxCantidad_TextChanged(object sender, EventArgs e)

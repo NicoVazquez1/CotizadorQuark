@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace CotizadorQuark.Modelos
 {
-    internal class Camisas : Prenda
+    internal class Camisa : Prenda
     {
-        bool EsMangaCorta { get; set; }
+        bool EsMangaCort { get; set; }
         bool EsCuelloMao { get; set; }
-        public Camisas(double precio, bool esPremium, bool esMangaCorta, bool esCuelloMao) : base(precio, esPremium)
+        public Camisa(bool esPremium, bool esMangaCort, bool esCuelloMao, int cantidad) : base(esPremium, cantidad)
         {
-            EsMangaCorta = esMangaCorta;
+            EsMangaCort = esMangaCort;
             EsCuelloMao = esCuelloMao;
-
-            //Buscar forma de implementar lambda => 
-            //Extraer las RN a otra clase 
-
-            if (EsMangaCorta)
+        }
+        public new double ValidarPrecio(double precio)
+        {
+            base.ValidarPrecio(precio);
+            if (EsMangaCort)
             {
                 precio *= 0.9;
             }
@@ -26,7 +26,7 @@ namespace CotizadorQuark.Modelos
             {
                 precio *= 1.03;
             }
-            Precio = precio;
+            return Precio = precio;
         }
     }
 }

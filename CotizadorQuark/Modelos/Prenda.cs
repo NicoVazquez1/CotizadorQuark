@@ -8,17 +8,32 @@ namespace CotizadorQuark.Modelos
 {
     internal abstract class Prenda
     {
-        //public string  Nombre { get; set; }
-        public double Precio { get; set; }
+        private double precio;
+        public double Precio 
+        { 
+            get { return this.precio; }
+            set { this.precio = ValidarPrecio(value); } 
+        }
         public bool EsPremium { get; set; }
-        public Prenda(double precio, bool esPremium)
+        public int Cantidad { get; set; }
+        public Prenda(bool esPremium, int cantidad)
         {
             //Extraer las RN a otra clase
             EsPremium = esPremium;
+            Cantidad = cantidad;
+        }
+        public double ValidarPrecio(double precio)
+        {
+            if (Precio < 0)
+            {
+                throw new Exception("El precio no puede ser negativo");
+            }
             if (EsPremium)
             {
-                precio *= 1.3; //Chequear esto #1
+                precio *= 1.3;
             }
+            return Precio;
         }
+
     }
 }

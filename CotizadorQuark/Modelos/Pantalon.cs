@@ -9,15 +9,18 @@ namespace CotizadorQuark.Modelos
     internal class Pantalon : Prenda
     {
         bool EsChupin { get; set; }
-        public Pantalon(double precio, bool esPremium, bool esChupin) : base(precio, esPremium)
+        public Pantalon(bool esPremium, bool esChupin, int cantidad) : base(esPremium, cantidad)
         {
-            //Extraer las RN a otra clase
             EsChupin = esChupin;
+        }
+        public new double ValidarPrecio(double precio)
+        {
+            base.ValidarPrecio(precio);
             if (EsChupin)
             {
                 precio *= 0.88;
             }
-            Precio = precio;
+            return Precio = precio;
         }
     }
 }

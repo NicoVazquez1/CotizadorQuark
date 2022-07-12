@@ -3,56 +3,46 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CotizadorQuark.Properties;
 
 namespace CotizadorQuark.Controladores
 {
     internal class Controller
     {
-        string info;
-        public string Cotizar(Form1 form)
+        public void Cotizar(Form1 form)
         {
+            bool esMangaCrt;
+            bool esCuelloMao;
+            bool esChupin;
+            bool esPremium;
+            
+            var precio = Convert.ToDouble(form.textBoxPrecio.Text);
+            var cantidad = Convert.ToDouble(form.textBoxCantidad.Text);
+            var total = precio * cantidad;
+
+            if (form.radioButtonPremium.Checked)
+            {
+                esPremium = true;
+            }
             if (form.radioButtonCamisa.Checked)
             {
-                info = "camisa";
                 if (form.checkBox_cMao.Checked)
                 {
-                    info += " | cuello mao";
-                }
-                else
-                {
-                    info += " | cuello común";
+                    esCuelloMao = true;
                 }
                 if (form.checkBox_mCorta.Checked)
                 {
-                    info += " | manga corta";
-                }
-                else
-                {
-                    info += " | manga larga";
+                    esMangaCrt = true;
                 }
             }
             if (form.radioButtonPantalon.Checked)
             {
-                info = "pantalón";
                 if (form.checkBoxChupin.Checked)
                 {
-                    info += " | chupín";
-                }
-                else
-                {
-                    info += " | común";
+                    esChupin = true;
                 }
             }
-            if (form.radioButtonPremium.Checked)
-            {
-                info += " | premium";
-            }
-            else
-            {
-                info += " | standar";
-            }
-            
-            return info;
+           
             
             //if if ( form.algo.checked ) Tienda<Prendas>.FilterBy(algo)
             //if (algo.cant?) => algo.Precio;
