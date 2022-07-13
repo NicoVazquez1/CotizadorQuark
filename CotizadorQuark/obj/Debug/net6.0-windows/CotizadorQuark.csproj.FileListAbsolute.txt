@@ -16,3 +16,4 @@ E:\Curso Quark\CotizadorQuark\CotizadorQuark\obj\Debug\net6.0-windows\CotizadorQ
 E:\Curso Quark\CotizadorQuark\CotizadorQuark\obj\Debug\net6.0-windows\CotizadorQuark.genruntimeconfig.cache
 E:\Curso Quark\CotizadorQuark\CotizadorQuark\obj\Debug\net6.0-windows\ref\CotizadorQuark.dll
 E:\Curso Quark\CotizadorQuark\CotizadorQuark\obj\Debug\net6.0-windows\CotizadorQuark.Properties.Resources.resources
+E:\Curso Quark\CotizadorQuark\CotizadorQuark\obj\Debug\net6.0-windows\CotizadorQuark.Form2.resources

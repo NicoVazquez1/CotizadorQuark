@@ -8,12 +8,7 @@ namespace CotizadorQuark.Modelos
 {
     internal abstract class Prenda
     {
-        private double precio;
-        public double Precio 
-        { 
-            get { return this.precio; }
-            set { this.precio = ValidarPrecio(value); } 
-        }
+        public double Precio { get; set; }
         public bool EsPremium { get; set; }
         public int Cantidad { get; set; }
         public Prenda(bool esPremium, int cantidad)
@@ -24,15 +19,16 @@ namespace CotizadorQuark.Modelos
         }
         public double ValidarPrecio(double precio)
         {
-            if (Precio < 0)
+            if (precio < 0)
             {
-                throw new Exception("El precio no puede ser negativo");
+                MessageBox.Show("El precio no puede ser negativo");
+                throw new ArgumentException("El precio no puede ser negativo");
             }
             if (EsPremium)
             {
                 precio *= 1.3;
             }
-            return Precio;
+            return precio;
         }
 
     }

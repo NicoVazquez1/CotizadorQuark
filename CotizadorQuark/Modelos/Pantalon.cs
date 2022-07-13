@@ -20,7 +20,8 @@ namespace CotizadorQuark.Modelos
             {
                 precio *= 0.88;
             }
-            return Precio = precio;
+            Precio = precio;
+            return Precio;
         }
     }
 }

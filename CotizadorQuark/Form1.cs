@@ -46,10 +46,22 @@ namespace CotizadorQuark
             cotizador.Cotizar(this);
         }
         
-        ///Eliminar esto
+        private void labelHistorialCotizaciones_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
+        }
+
         private void textBoxCantidad_TextChanged(object sender, EventArgs e)
         {
+            //Controller cotizador = new Controller();
+            //cotizador.Validar(this.textBoxCantidad.Text);
+        }
 
+        private void textBoxPrecio_TextChanged(object sender, EventArgs e)
+        {
+            //Controller cotizador = new Controller();
+            //cotizador.Validar(this.textBoxPrecio.Text);
         }
     }
 }

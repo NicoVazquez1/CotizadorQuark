@@ -17,7 +17,7 @@ namespace CotizadorQuark.Modelos
         }
         public new double ValidarPrecio(double precio)
         {
-            base.ValidarPrecio(precio);
+            precio = base.ValidarPrecio(precio);
             if (EsMangaCort)
             {
                 precio *= 0.9;
@@ -26,7 +26,8 @@ namespace CotizadorQuark.Modelos
             {
                 precio *= 1.03;
             }
-            return Precio = precio;
+            Precio = precio;
+            return Precio;
         }
     }
 }
