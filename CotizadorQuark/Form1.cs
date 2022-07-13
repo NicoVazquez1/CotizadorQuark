@@ -48,8 +48,15 @@ namespace CotizadorQuark
         
         private void labelHistorialCotizaciones_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
-            form2.ShowDialog();
+            try
+            {
+                Form2 form2 = new Form2();
+                form2.ShowDialog();
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show("No existen comiciones que mostrar");
+            }
         }
 
         private void textBoxCantidad_TextChanged(object sender, EventArgs e)

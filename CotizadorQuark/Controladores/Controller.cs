@@ -63,6 +63,7 @@ namespace CotizadorQuark.Controladores
                         p.Cantidad >= cantidad);
                         total = pantalon.ValidarPrecio(precio);
                         tienda.ActualizarLista(pantalon, cantidad);
+                        GetVendedor().AgregarCotizacion(pantalon, cantidad);
                         form.label_nStock.Text = pantalon.Cantidad.ToString();
                     }
                     catch (NullReferenceException)

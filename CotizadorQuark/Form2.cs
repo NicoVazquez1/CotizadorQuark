@@ -20,8 +20,7 @@ namespace CotizadorQuark
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
-            form.ShowDialog();
+            this.Close();
         }
 
         private void labelHistorialCotizaciones_Click(object sender, EventArgs e)
@@ -36,8 +35,15 @@ namespace CotizadorQuark
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            Controller2 controller2 = new Controller2();
-            controller2.MostrarCotizaciones(controller2.GetVenderdor(), this);
+            try
+            {
+                Controller2 controller2 = new Controller2();
+                controller2.MostrarCotizaciones(controller2.GetVenderdor(), this);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No existen comiciones que mostrar");
+            }
         }
     }
 }
