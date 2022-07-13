@@ -13,7 +13,6 @@ namespace CotizadorQuark.Modelos
         public int Cantidad { get; set; }
         public Prenda(bool esPremium, int cantidad)
         {
-            //Extraer las RN a otra clase
             EsPremium = esPremium;
             Cantidad = cantidad;
         }

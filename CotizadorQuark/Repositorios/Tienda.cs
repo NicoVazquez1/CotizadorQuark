@@ -33,7 +33,7 @@ namespace CotizadorQuark.Repositorios
                 return instancia;
             }
         }
-        public void crearStock()
+        public void CrearStock()
         {
             Camisa camisaSCortComun = new Camisa(false, true, false, 150);
             Camisa camisaPCortComun = new Camisa(true, true, false, 150);

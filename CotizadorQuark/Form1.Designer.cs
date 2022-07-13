@@ -405,8 +405,8 @@
         #endregion
 
         private Label labelCotizadorExpress;
-        private Label labelVendedorInfo;
-        private Label labelNombreTienda;
+        public Label labelVendedorInfo;
+        public Label labelNombreTienda;
         private Label labelHistorialCotizaciones;
         public Label labelStock;
         public Label label_nStock;
@@ -414,7 +414,7 @@
         private Label label_simbolitoRes;
         private Label label_simbolito;
         public Label label_resultado;
-        private Label labelDireccion;
+        public Label labelDireccion;
         public RadioButton radioButtonCamisa;
         public RadioButton radioButtonPantalon;
         public RadioButton radioButtonStandar;

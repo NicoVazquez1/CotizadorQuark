@@ -40,13 +40,6 @@
             this.label_simbolitoRes = new System.Windows.Forms.Label();
             this.label_totalCotizado = new System.Windows.Forms.Label();
             this.labelMSJVacio = new System.Windows.Forms.Label();
-            this.labeltipoPrendac = new System.Windows.Forms.Label();
-            this.labelPremiumc = new System.Windows.Forms.Label();
-            this.labelFecha = new System.Windows.Forms.Label();
-            this.labelHora = new System.Windows.Forms.Label();
-            this.labelCantidadc = new System.Windows.Forms.Label();
-            this.labelCotizacionc = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,10 +47,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.listBoxCotizaciones = new System.Windows.Forms.ListBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -183,73 +176,6 @@
             this.labelMSJVacio.Size = new System.Drawing.Size(0, 15);
             this.labelMSJVacio.TabIndex = 41;
             // 
-            // labeltipoPrendac
-            // 
-            this.labeltipoPrendac.AutoSize = true;
-            this.labeltipoPrendac.Location = new System.Drawing.Point(8, 14);
-            this.labeltipoPrendac.Name = "labeltipoPrendac";
-            this.labeltipoPrendac.Size = new System.Drawing.Size(30, 15);
-            this.labeltipoPrendac.TabIndex = 0;
-            this.labeltipoPrendac.Text = "Tipo";
-            // 
-            // labelPremiumc
-            // 
-            this.labelPremiumc.AutoSize = true;
-            this.labelPremiumc.Location = new System.Drawing.Point(159, 14);
-            this.labelPremiumc.Name = "labelPremiumc";
-            this.labelPremiumc.Size = new System.Drawing.Size(56, 15);
-            this.labelPremiumc.TabIndex = 1;
-            this.labelPremiumc.Text = "Premium";
-            // 
-            // labelFecha
-            // 
-            this.labelFecha.AutoSize = true;
-            this.labelFecha.Location = new System.Drawing.Point(243, 14);
-            this.labelFecha.Name = "labelFecha";
-            this.labelFecha.Size = new System.Drawing.Size(38, 15);
-            this.labelFecha.TabIndex = 2;
-            this.labelFecha.Text = "Fecha";
-            // 
-            // labelHora
-            // 
-            this.labelHora.AutoSize = true;
-            this.labelHora.Location = new System.Drawing.Point(315, 14);
-            this.labelHora.Name = "labelHora";
-            this.labelHora.Size = new System.Drawing.Size(33, 15);
-            this.labelHora.TabIndex = 3;
-            this.labelHora.Text = "Hora";
-            // 
-            // labelCantidadc
-            // 
-            this.labelCantidadc.AutoSize = true;
-            this.labelCantidadc.Location = new System.Drawing.Point(376, 14);
-            this.labelCantidadc.Name = "labelCantidadc";
-            this.labelCantidadc.Size = new System.Drawing.Size(55, 15);
-            this.labelCantidadc.TabIndex = 4;
-            this.labelCantidadc.Text = "Cantidad";
-            // 
-            // labelCotizacionc
-            // 
-            this.labelCotizacionc.AutoSize = true;
-            this.labelCotizacionc.Location = new System.Drawing.Point(446, 14);
-            this.labelCotizacionc.Name = "labelCotizacionc";
-            this.labelCotizacionc.Size = new System.Drawing.Size(63, 15);
-            this.labelCotizacionc.TabIndex = 5;
-            this.labelCotizacionc.Text = "Cotización";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.labelCotizacionc);
-            this.panel4.Controls.Add(this.labelCantidadc);
-            this.panel4.Controls.Add(this.labelHora);
-            this.panel4.Controls.Add(this.labelFecha);
-            this.panel4.Controls.Add(this.labelPremiumc);
-            this.panel4.Controls.Add(this.labeltipoPrendac);
-            this.panel4.Location = new System.Drawing.Point(6, 190);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(530, 36);
-            this.panel4.TabIndex = 42;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -262,7 +188,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(159, 14);
+            this.label5.Location = new System.Drawing.Point(119, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 15);
             this.label5.TabIndex = 1;
@@ -271,7 +197,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(243, 14);
+            this.label4.Location = new System.Drawing.Point(190, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 15);
             this.label4.TabIndex = 2;
@@ -280,7 +206,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(315, 14);
+            this.label3.Location = new System.Drawing.Point(238, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 15);
             this.label3.TabIndex = 3;
@@ -289,7 +215,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(376, 14);
+            this.label2.Location = new System.Drawing.Point(315, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 15);
             this.label2.TabIndex = 4;
@@ -298,7 +224,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(446, 14);
+            this.label1.Location = new System.Drawing.Point(395, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 15);
             this.label1.TabIndex = 5;
@@ -317,13 +243,22 @@
             this.panel5.Size = new System.Drawing.Size(530, 36);
             this.panel5.TabIndex = 43;
             // 
+            // listBoxCotizaciones
+            // 
+            this.listBoxCotizaciones.FormattingEnabled = true;
+            this.listBoxCotizaciones.ItemHeight = 15;
+            this.listBoxCotizaciones.Location = new System.Drawing.Point(6, 187);
+            this.listBoxCotizaciones.Name = "listBoxCotizaciones";
+            this.listBoxCotizaciones.Size = new System.Drawing.Size(530, 199);
+            this.listBoxCotizaciones.TabIndex = 44;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 476);
+            this.Controls.Add(this.listBoxCotizaciones);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.labelMSJVacio);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
@@ -337,8 +272,6 @@
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
@@ -360,13 +293,6 @@
         private Label label_simbolitoRes;
         public Label label_totalCotizado;
         public Label labelMSJVacio;
-        public Label labeltipoPrendac;
-        public Label labelPremiumc;
-        public Label labelFecha;
-        public Label labelHora;
-        public Label labelCantidadc;
-        public Label labelCotizacionc;
-        public Panel panel4;
         public Label label6;
         public Label label5;
         public Label label4;
@@ -374,5 +300,6 @@
         public Label label2;
         public Label label1;
         public Panel panel5;
+        public ListBox listBoxCotizaciones;
     }
 }

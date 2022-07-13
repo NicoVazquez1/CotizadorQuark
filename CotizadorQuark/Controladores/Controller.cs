@@ -15,14 +15,9 @@ namespace CotizadorQuark.Controladores
             var vendedor = VendedorRepository.Instancia.GetVendedor("Juan");
             return vendedor;
         }
-        public Tienda<Prenda> GetTienda()
-        {
-            var tienda = Tienda<Prenda>.Instancia;
-            return tienda;
-        }
         public void Iniciar()
         {
-            Tienda<Prenda>.Instancia.crearStock();
+            Tienda<Prenda>.Instancia.CrearStock();
         }
         public void Cotizar(Form1 form)
         {
@@ -70,7 +65,6 @@ namespace CotizadorQuark.Controladores
                     {
                         MessageBox.Show("No hay suficientes prendas en stock");
                     }
-                   
                 }
                 total = GetVendedor().Cotizaciones.Last().Resultado;
                 Math.Floor(total);
@@ -86,5 +80,16 @@ namespace CotizadorQuark.Controladores
                 MessageBox.Show("Error");
             }
         }
+
+        public void MostrarDatos(Form1 form)
+        {
+            Tienda<Prenda> tienda = Tienda<Prenda>.Instancia;
+            Vendedor vendedor = GetVendedor();
+            form.labelNombreTienda.Text = tienda.Nombre.ToString();
+            form.labelDireccion.Text = tienda.Direccion.ToString();
+            form.labelVendedorInfo.Text = vendedor.Nombre.ToString() + " " + vendedor.Apellido.ToString() + " | " + Vendedor.Id.ToString();
+        }
     }
+
+    
 }

@@ -9,7 +9,6 @@ namespace CotizadorQuark.Modelos
 {
     internal class Vendedor
     {
-        public double TotaldeCotizaciones { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public static int Id { get; set; }
@@ -22,16 +21,10 @@ namespace CotizadorQuark.Modelos
             Cotizaciones = new List<Cotizacion>();
             Id++;
         }
-
         public void AgregarCotizacion(Prenda p, int cantidad)
         {
             Cotizaciones.Add(new Cotizacion(p, cantidad));
-            TotaldeCotizaciones += Cotizaciones.Last().Resultado;
         }
-
-        public Cotizacion GetCotizacion()
-        {
-            return Cotizaciones.Last();
-        }
+      
     }
 }

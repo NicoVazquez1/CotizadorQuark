@@ -38,7 +38,8 @@ namespace CotizadorQuark
             try
             {
                 Controller2 controller2 = new Controller2();
-                controller2.MostrarCotizaciones(controller2.GetVenderdor(), this);
+                controller2.MostrarCotizaciones(controller2.GetVendedor(), this);
+                controller2.MostrarDatos(this);
             }
             catch (Exception)
             {

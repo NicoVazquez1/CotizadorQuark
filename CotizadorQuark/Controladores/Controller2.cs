@@ -11,7 +11,7 @@ namespace CotizadorQuark.Controladores
 {
     internal class Controller2
     {
-        public Vendedor GetVenderdor()
+        public Vendedor GetVendedor()
         {
             var vendedor = VendedorRepository.Instancia.GetVendedor("Juan");
             return vendedor;
@@ -19,15 +19,25 @@ namespace CotizadorQuark.Controladores
 
         public void MostrarCotizaciones(Vendedor vendedor, Form2 form)
         {
-            Cotizacion cotizacion = vendedor.GetCotizacion();
-            form.labeltipoPrendac.Text = cotizacion.PrendaCotizada.GetType().Name;
-            form.labelPremiumc.Text = cotizacion.PrendaCotizada.EsPremium.ToString();
-            form.labelFecha.Text = cotizacion.Fecha.ToString("yyyy-MM-dd");
-            form.labelHora.Text = cotizacion.Hora.ToString("HH:mm");
-            form.labelCantidadc.Text = cotizacion.CantCotizada.ToString();
-            form.labelCotizacionc.Text = cotizacion.Resultado.ToString();
-            form.label_totalCotizado.Text = vendedor.TotaldeCotizaciones.ToString();
+            vendedor.Cotizaciones.ForEach(cotizacion =>
+            {
+                string info = $"{cotizacion.PrendaCotizada.GetType().Name} |                      " +
+                $" {cotizacion.PrendaCotizada.EsPremium.ToString()} | {cotizacion.Fecha.ToString("yyyy-MM-dd")} |" +
+                $" {cotizacion.Hora.ToString("HH:mm")} | {cotizacion.CantCotizada.ToString()} |" +
+                $" {cotizacion.Resultado.ToString()}  ";
+                form.listBoxCotizaciones.Items.Add(info);
+            });
+            form.label_totalCotizado.Text = vendedor.Cotizaciones.Sum(cotizacion => cotizacion.Resultado).ToString();
         }
-        
+
+        public void MostrarDatos(Form2 form)
+        {
+            Tienda<Prenda> tienda = Tienda<Prenda>.Instancia;
+            Vendedor vendedor = GetVendedor();
+            form.labelNombreTienda.Text = tienda.Nombre.ToString();
+            form.labelDireccion.Text = tienda.Direccion.ToString();
+            form.labelVendedorInfo.Text = vendedor.Nombre.ToString() + " " + vendedor.Apellido.ToString() + " | " + Vendedor.Id.ToString();
+        }
+
     }
 }

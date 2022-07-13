@@ -12,6 +12,7 @@ namespace CotizadorQuark
         {
             Controller controller = new Controller();
             controller.Iniciar();
+            controller.MostrarDatos(this);
         }
 
         private void radioButtonCamisa_CheckedChanged(object sender, EventArgs e)
