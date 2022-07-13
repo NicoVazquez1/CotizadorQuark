@@ -8,8 +8,8 @@ namespace CotizadorQuark.Modelos
 {
     internal class Camisa : Prenda
     {
-        bool EsMangaCort { get; set; }
-        bool EsCuelloMao { get; set; }
+        public bool EsMangaCort { get; set; }
+        public bool EsCuelloMao { get; set; }
         public Camisa(bool esPremium, bool esMangaCort, bool esCuelloMao, int cantidad) : base(esPremium, cantidad)
         {
             EsMangaCort = esMangaCort;

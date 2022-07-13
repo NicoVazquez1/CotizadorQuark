@@ -30,7 +30,6 @@
         {
             this.labelCotizadorExpress = new System.Windows.Forms.Label();
             this.labelVendedorInfo = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.labelNombreTienda = new System.Windows.Forms.Label();
             this.labelHistorialCotizaciones = new System.Windows.Forms.Label();
             this.labelStock = new System.Windows.Forms.Label();
@@ -85,14 +84,6 @@
             this.labelVendedorInfo.Size = new System.Drawing.Size(265, 15);
             this.labelVendedorInfo.TabIndex = 1;
             this.labelVendedorInfo.Text = "Nombre y Aprellido Vendedor | Código Vendedor";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(415, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 15);
-            this.label3.TabIndex = 2;
             // 
             // labelNombreTienda
             // 
@@ -364,7 +355,6 @@
             this.Controls.Add(this.labelDireccion);
             this.Controls.Add(this.labelHistorialCotizaciones);
             this.Controls.Add(this.labelNombreTienda);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.labelVendedorInfo);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -390,15 +380,14 @@
 
         private Label labelCotizadorExpress;
         private Label labelVendedorInfo;
-        private Label label3;
         private Label labelNombreTienda;
         private Label labelHistorialCotizaciones;
-        private Label labelStock;
-        private Label label_nStock;
+        public Label labelStock;
+        public Label label_nStock;
         private Label labelCantidad;
         private Label label_simbolitoRes;
         private Label label_simbolito;
-        private Label label_resultado;
+        public Label label_resultado;
         private Label labelDireccion;
         public RadioButton radioButtonCamisa;
         public RadioButton radioButtonPantalon;

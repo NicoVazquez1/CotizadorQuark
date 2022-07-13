@@ -10,7 +10,8 @@ namespace CotizadorQuark
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Controller controller = new Controller();
+            controller.Iniciar();
         }
 
         private void radioButtonCamisa_CheckedChanged(object sender, EventArgs e)
@@ -44,7 +45,8 @@ namespace CotizadorQuark
             Controller cotizador = new Controller();
             cotizador.Cotizar(this);
         }
-
+        
+        ///Eliminar esto
         private void textBoxCantidad_TextChanged(object sender, EventArgs e)
         {
 

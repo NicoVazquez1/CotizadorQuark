@@ -7,16 +7,30 @@ using CotizadorQuark.Modelos;
 
 namespace CotizadorQuark.Repositorios
 {
-    internal class VendedorRepository
+    internal class VendedorRepository : List<Vendedor>
     {
-        public static List<Vendedor> GetVendedores()
+        private static VendedorRepository instancia;
+        List<Vendedor> Vendedores = new List<Vendedor>();
+        private VendedorRepository()
         {
-            return new List<Vendedor>()
+            Vendedores.Add(new Vendedor("Jorge", "Perez"));
+            Vendedores.Add(new Vendedor("Juan", "Fernandez"));
+        }
+        public static VendedorRepository Instancia
+        {
+            get
             {
-                new Vendedor("Jorge", "Perez"),
-                new Vendedor("Juan", "Fernandez"), 
-            };
+                if (instancia == null)
+                {
+                    instancia = new VendedorRepository();
+                }
+                return instancia;
+            }
+        }
+
+        public Vendedor GetVendedor(string nombre)
+        {
+            return Vendedores.FirstOrDefault(v => v.Nombre == nombre);
         }
     }
-    
 }

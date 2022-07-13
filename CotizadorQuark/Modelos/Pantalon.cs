@@ -8,7 +8,7 @@ namespace CotizadorQuark.Modelos
 {
     internal class Pantalon : Prenda
     {
-        bool EsChupin { get; set; }
+        public bool EsChupin { get; set; }
         public Pantalon(bool esPremium, bool esChupin, int cantidad) : base(esPremium, cantidad)
         {
             EsChupin = esChupin;

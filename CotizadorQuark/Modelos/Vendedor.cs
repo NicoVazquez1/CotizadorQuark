@@ -21,10 +21,10 @@ namespace CotizadorQuark.Modelos
             Cotizaciones = new List<Cotizacion>();
             Id++;
         }
-        public List<Cotizacion> agregarCotizacion(List<Cotizacion> cotizaciones)
+
+        public void AgregarCotizacion(Prenda p, int cantidad)
         {
-            cotizaciones.ForEach(element => Cotizaciones.Add(element));
-            return Cotizaciones;
+            Cotizaciones.Add(new Cotizacion(p, cantidad));
         }
     }
 }

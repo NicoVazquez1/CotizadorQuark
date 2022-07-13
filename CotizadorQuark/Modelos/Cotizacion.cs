@@ -8,15 +8,15 @@ namespace CotizadorQuark.Modelos
 {
     internal class Cotizacion
     {
-        public string vendedorId { get; set; }
+        public int vendedorId { get; set; }
         public DateTime Fecha { get; set; }
         public DateTime Hora { get; set; }
         public Prenda PrendaCotizada { get; set; }
         public int CantCotizada { get; set; }
         public double Resultado { get; set; }
-        public Cotizacion(Prenda prenda, int cantidad, string vendedor)
+        public Cotizacion(Prenda prenda, int cantidad)
         {
-            vendedorId = vendedor;
+            vendedorId = Vendedor.Id;
             Fecha = DateTime.Now;
             Hora = DateTime.Now;
             PrendaCotizada = prenda;
